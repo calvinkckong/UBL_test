@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Define your valid token(s)
+    const validTokens = ['c']; // Can add more
+
+    // Get token from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    // Your Google Form URL
+    const formURL = "https://forms.gle/Vs9WjEGrpMTfKsmd8";
+
+    if (validTokens.includes(token)) {
+      // Redirect if valid token
+      window.location.href = formURL;
+    } else {
+      // Show message if token invalid or missing
+      document.write("<h2>Access Denied</h2><p>This form is only accessible via QR code.</p>");
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
